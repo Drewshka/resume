@@ -7,17 +7,18 @@ import linkedin from "../../assets/icons/linkedin.svg";
 import github from "../../assets/icons/github.svg";
 import location from "../../assets/icons/location.svg";
 import phone from "../../assets/icons/phone.svg";
+import FormModal from "../FormModal/FormModal";
 import {
   Text,
   View,
-  StyleSheet,
+  //   StyleSheet,
   //   Card,
   //   Image,
   FlatList,
   TouchableOpacity,
 } from "react-native";
 // import Constants from "expo-constants";
-var FontAwesome = require("react-fontawesome");
+const FontAwesome = require("react-fontawesome");
 
 const Data = [
   {
@@ -86,6 +87,7 @@ class Header extends Component {
             <h1 className="header_section-name">Andrew Stevenson</h1>
             <h3 className="header_section-title">Full Stack Developer</h3>
           </div>
+          <FormModal />
           <div className="header_section">
             <ul className="header_section-links">
               <View>
@@ -101,13 +103,12 @@ class Header extends Component {
                         style={
                           item.selected === true
                             ? {
-                                padding: 10,
+                                padding: 5,
                                 borderRadius: 5,
-                                // backgroundColor: "#000000",
                                 backgroundColor: "white",
                               }
                             : {
-                                padding: 10,
+                                padding: 5,
                                 borderRadius: 5,
                                 backgroundColor: "cadetblue",
                               }
@@ -118,6 +119,7 @@ class Header extends Component {
                             id="icon"
                             className={item.className}
                             size="1x"
+                            value={item.icon}
                             style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                           />
                           {item.item}
@@ -136,47 +138,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// import React, { useState } from "react";
-
-// const Header = () => {
-//   const [selectedDistricts, setSelectedDistricts] = useState([]);
-
-//   const addDistrictToList = (id) => {
-//     setSelectedDistricts([...selectedDistricts, id]);
-//   };
-
-//   const isDistrictSelected = (id) => {
-//     return selectedDistricts.indexOf(id) !== -1;
-//   };
-
-//   return (
-//     <div className="list-group">
-//       <button
-//         type="button"
-//         // className={isDistrictSelected(1) ? "active" : ""}
-//         className={isDistrictSelected(1) && "active"}
-//         onClick={() => addDistrictToList(1)}>
-//         {" "}
-//         1. bezirk{" "}
-//       </button>
-//       <button
-//         type="button"
-//         // className={isDistrictSelected(2) ? "active" : ""}
-//         className={isDistrictSelected(2) && "active"}
-//         onClick={() => addDistrictToList(2)}>
-//         {" "}
-//         2. bezirk{" "}
-//       </button>
-//       <button
-//         type="button"
-//         className={isDistrictSelected(3) && "active"}
-//         onClick={() => addDistrictToList(3)}>
-//         {" "}
-//         3. bezirk{" "}
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Header;
