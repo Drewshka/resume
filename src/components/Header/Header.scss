@@ -1,0 +1,45 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.active {
+  color: red;
+}
+
+.header {
+  background-color: cadetblue;
+  @include flex(space-around, center, column);
+  padding: 2rem;
+  &_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-headshot {
+      height: 10rem;
+      border-radius: 50px;
+    }
+
+    &-name {
+      @include font("Open Sans Regular", 700, 24px, 32px, $primary);
+    }
+
+    &-title {
+      @include font("Open Sans Light", 700, 20px, 32px, $primary);
+    }
+
+    &-links {
+      list-style-type: none;
+      &-item {
+        @include font("Open Sans Light", 700, 12px, 18px, $primary);
+      }
+    }
+  }
+}
+
+.icon {
+  height: 1rem;
+}
+
+#icon {
+  margin-right: 4px;
+}

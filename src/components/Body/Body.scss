@@ -1,0 +1,61 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.body {
+  padding: 1rem 2rem;
+  &_header {
+    @include font("Open Sans Regular", 700, 24px, 32px, $primary);
+  }
+
+  &_para {
+    @include font("Open Sans Light", 700, 12px, 18px, $primary);
+  }
+}
+
+.education {
+  &_header {
+    @include font("Open Sans Regular", 700, 24px, 32px, $primary);
+  }
+
+  &_container {
+    @include flex(space-between, baseline, row);
+
+    &-subject {
+      @include font("Open Sans Regular", 700, 14px, 18px, $primary);
+    }
+
+    &-school {
+      @include font("Open Sans Regular", 700, 12px, 18px, $primary2);
+    }
+
+    &-year {
+      @include font("Open Sans Light", 700, 12px, 18px, $primary);
+    }
+  }
+}
+
+.experience {
+  &_header {
+    @include font("Open Sans Regular", 700, 24px, 32px, $primary);
+  }
+
+  &_container {
+    @include flex(space-between, baseline, row);
+
+    &-position {
+      @include font("Open Sans Regular", 700, 14px, 18px, $primary);
+    }
+
+    &-company {
+      @include font("Open Sans Regular", 700, 12px, 18px, $primary2);
+    }
+
+    &-year {
+      @include font("Open Sans Light", 700, 12px, 18px, $primary);
+    }
+  }
+}
+
+#icon {
+  margin-right: 4px;
+}
