@@ -8,6 +8,7 @@ import github from "../../assets/icons/github.svg";
 import location from "../../assets/icons/location.svg";
 import phone from "../../assets/icons/phone.svg";
 import FormModal from "../FormModal/FormModal";
+import FormSubmit from "../FormSubmit";
 import {
   Text,
   View,
@@ -60,7 +61,7 @@ class Header extends Component {
     this.state = {
       selectedItem: null,
       renderData: Data,
-      //   submitted: false
+      submitted: false,
     };
   }
 
@@ -96,7 +97,8 @@ class Header extends Component {
             <h1 className="header_section-name">Andrew Stevenson</h1>
             <h3 className="header_section-title">Full Stack Developer</h3>
           </div>
-          <FormModal />
+          <FormModal submitted={this.state.submitted} />
+          {/* <FormSubmit /> */}
           <div className="header_section">
             <ul className="header_section-links">
               <View>
