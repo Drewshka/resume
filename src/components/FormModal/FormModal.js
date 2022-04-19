@@ -4,7 +4,11 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { FormControl } from "@material-ui/core";
+import FormSubmit from "../FormSubmit";
 
 const style = {
   position: "absolute",
@@ -22,6 +26,7 @@ export default function EditModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [submitted, setSubmitted] = useState(false);
   const [data, setData] = useState({
     recruiterName: "",
     email: "",
@@ -31,21 +36,32 @@ export default function EditModal() {
   });
 
   const handleChange = (e) => {
-    setData({
-      ...data,
-
-      // Trimming any whitespace
-      [e.target.name]: e.target.value.trim(),
+    const { name, value } = e.target;
+    setData((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
     });
+    // setData({
+    //   ...data,
+    //   // Trimming any whitespace
+    //   [e.target.name]: e.target.value.trim(),
+    // });
   };
 
   const submit = (e) => {
     e.preventDefault();
     alert("Info Submitted!");
+    setSubmitted(true);
+    console.log(data.recruiterName);
   };
 
   const { recruiterName, email, company, salaryRange, startingDate } = data;
 
+  //   if (submitted) {
+  //     return <FormSubmit />;
+  //   }
   return (
     <div>
       <Button onClick={handleOpen}>Contact Form</Button>
@@ -77,7 +93,7 @@ export default function EditModal() {
                   required
                 />
               </FormControl>
-              <FormControl>
+              {/* <FormControl>
                 <TextField
                   onChange={handleChange}
                   value={email}
@@ -124,10 +140,26 @@ export default function EditModal() {
                   type="text"
                   required
                 />
-              </FormControl>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <DatePicker
+                    id="filled-basic"
+                    label="Starting Date"
+                    variant="outlined"
+                    name="startingDate"
+                    // value={startingDate}
+                    // onChange={handleChange}
+                    value={data}
+                    onChange={(newValue) => {
+                      setData(newValue);
+                    }}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                </LocalizationProvider>
+              </FormControl> */}
               <Button type="submit" variant="contained" size="large">
                 Submit
               </Button>
+              {/* {submitted && <p>"Name: " {data.recruiterName}</p>} */}
             </Box>
           </form>
         </Box>

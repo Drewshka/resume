@@ -60,6 +60,7 @@ class Header extends Component {
     this.state = {
       selectedItem: null,
       renderData: Data,
+      //   submitted: false
     };
   }
 
@@ -75,6 +76,14 @@ class Header extends Component {
   }
 
   render() {
+    // const submitted = this.state.submitted;
+    // let button;
+    // if (submitted) {
+    //   button = <LogoutButton onClick={this.handleLogoutClick} />;
+    // } else {
+    //   button = <LoginButton onClick={this.handleLoginClick} />;
+    // }
+
     return (
       <div>
         <header className="header">
@@ -117,8 +126,9 @@ class Header extends Component {
                           {" "}
                           <FontAwesome
                             id="icon"
+                            name="icon"
                             className={item.className}
-                            size="1x"
+                            size="lg"
                             value={item.icon}
                             style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                           />

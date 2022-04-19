@@ -11,9 +11,10 @@ function App() {
           <h1 className="body_header">
             <FontAwesome
               id="icon"
+              name="icon"
               className="fa-light fa-user-secret"
               //   className="fa-solid fa-briefcase"
-              size="1x"
+              size="lg"
               style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
             />
             Career Profile
