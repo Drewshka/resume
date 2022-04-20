@@ -1,8 +1,8 @@
 // import "./App.scss";
 import React from "react";
 import Resume from "./pages/Resume";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import FormSubmit from "./components/FormSubmit";
+// import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+// import FormSubmit from "./components/FormSubmit";
 // import Header from "./components/Header/Header";
 // import Body from "./components/Body/Body";
 // var FontAwesome = require("react-fontawesome");
@@ -14,8 +14,6 @@ import FormSubmit from "./components/FormSubmit";
 function App() {
   return (
     <div className="App">
-      {/* <Header />
-      <Body /> */}
       <Resume />
       {/* <Router>
         <Switch>

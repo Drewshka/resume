@@ -1,14 +1,14 @@
 import "./Header.scss";
 import React, { Component } from "react";
 import headshot from "../../assets/images/andrew.JPG";
-// import { useState } from "react";
 import email from "../../assets/icons/email.svg";
 import linkedin from "../../assets/icons/linkedin.svg";
 import github from "../../assets/icons/github.svg";
 import location from "../../assets/icons/location.svg";
 import phone from "../../assets/icons/phone.svg";
 import FormModal from "../FormModal/FormModal";
-import FormSubmit from "../FormSubmit";
+// import { useState } from "react";
+// import FormSubmit from "../FormSubmit";
 import {
   Text,
   View,
