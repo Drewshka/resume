@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
 
 const style = {
   position: "absolute",
@@ -26,11 +25,11 @@ export default function FormSubmit(props) {
   const [open, setOpen] = React.useState(true);
   //   const handleOpen = () => setOpen(true);
   const handleClose = () => {
-    setOpen(false);
     window.location.reload(false);
+    setOpen(false);
   };
 
-  console.log(props);
+  console.log(props.data.email);
   return (
     <div className="formSubmit">
       {/* <Button onClick={handleOpen}>Contact Form</Button> */}
@@ -40,12 +39,25 @@ export default function FormSubmit(props) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="modal-modal-message" variant="h6" component="h2">
             Thanks for your submission!
           </Typography>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="modal-modal-name" variant="h6" component="h2">
             Recruiter Name: {props.data.recruiterName}
           </Typography>
+          <Typography id="modal-modal-email" variant="h6" component="h2">
+            Email: {props.data.email}
+          </Typography>
+          <Typography id="modal-modal-company" variant="h6" component="h2">
+            Company: {props.data.company}
+          </Typography>
+          <Typography id="modal-modal-salary" variant="h6" component="h2">
+            Salary Range: {props.data.salaryRange}
+          </Typography>
+          <Typography id="modal-modal-salary" variant="h6" component="h2">
+            Starting Date: {props.data.startingDate}
+          </Typography>
+
           <Box
             sx={{
               "& > :not(style)": { m: 1, width: "25ch" },

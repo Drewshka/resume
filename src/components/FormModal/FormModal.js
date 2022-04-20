@@ -4,12 +4,12 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { FormControl } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import moment from "moment";
 import FormSubmit from "../FormSubmit";
+// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const style = {
   position: "absolute",
@@ -46,21 +46,16 @@ export default function EditModal(props) {
         [name]: value,
       };
     });
-    // setData({
-    //   ...data,
-    //   // Trimming any whitespace
-    //   [e.target.name]: e.target.value.trim(),
-    // });
   };
-
-  //   let history = useHistory();
 
   const submit = (e) => {
     e.preventDefault();
     // const history = useHistory();
     alert("Info Submitted!");
     setSubmitted(true);
-    console.log(data.recruiterName);
+    console.log(data);
+    // console.log(date);
+
     // history.push("/submit");
     // window.location.reload(false);
   };
@@ -102,69 +97,57 @@ export default function EditModal(props) {
                     required
                   />
                 </FormControl>
-                {/* <FormControl>
-                      <TextField
-                        onChange={handleChange}
-                        value={email}
-                        id="filled-basic"
-                        label="Email"
-                        variant="outlined"
-                        name="email"
-                        type="text"
-                        required
-                      />
-                    </FormControl>
-                    <FormControl>
-                      <TextField
-                        onChange={handleChange}
-                        value={company}
-                        id="filled-basic"
-                        label="Company"
-                        variant="outlined"
-                        name="company"
-                        type="text"
-                        required
-                      />
-                    </FormControl>
-                    <FormControl>
-                      <TextField
-                        onChange={handleChange}
-                        value={salaryRange}
-                        id="filled-basic"
-                        label="Salary Range"
-                        variant="outlined"
-                        name="salaryRange"
-                        type="text"
-                        required
-                      />
-                    </FormControl>
-                    <FormControl>
-                      <TextField
-                        onChange={handleChange}
-                        value={startingDate}
-                        id="filled-basic"
-                        label="Starting Date"
-                        variant="outlined"
-                        name="startingDate"
-                        type="text"
-                        required
-                      />
-                      <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <DatePicker
-                          id="filled-basic"
-                          label="Starting Date"
-                          variant="outlined"
-                          name="startingDate"
-                          // value={startingDate}
-                          // onChange={handleChange}
-                          value={data}
-                          onChange={(newValue) => {
-                            setData(newValue);
-                          }}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </LocalizationProvider>
-                    </FormControl> */}
+                <FormControl>
+                  <TextField
+                    onChange={handleChange}
+                    value={email}
+                    id="filled-basic"
+                    label="Email"
+                    variant="outlined"
+                    name="email"
+                    type="text"
+                    required
+                  />
+                </FormControl>
+                <FormControl>
+                  <TextField
+                    onChange={handleChange}
+                    value={company}
+                    id="filled-basic"
+                    label="Company"
+                    variant="outlined"
+                    name="company"
+                    type="text"
+                    required
+                  />
+                </FormControl>
+                <FormControl>
+                  <TextField
+                    onChange={handleChange}
+                    value={salaryRange}
+                    id="filled-basic"
+                    label="Salary Range"
+                    variant="outlined"
+                    name="salaryRange"
+                    type="text"
+                    required
+                  />
+                </FormControl>
+                <FormControl>
+                  <TextField
+                    focused
+                    onChange={handleChange}
+                    value={startingDate}
+                    id="filled-basic"
+                    // variant="filled"
+                    variant="outlined"
+                    label="Starting Date"
+                    // emptyLabel="Starting Date"
+                    name="startingDate"
+                    type="date"
+                    required
+                  />
+                </FormControl>
                 <Button type="submit" variant="contained" size="large">
                   Submit
                 </Button>

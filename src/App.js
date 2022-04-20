@@ -16,13 +16,13 @@ function App() {
     <div className="App">
       {/* <Header />
       <Body /> */}
-      {/* <Resume /> */}
-      <Router>
+      <Resume />
+      {/* <Router>
         <Switch>
           <Route path="/" exact component={Resume} />
           <Route path="/submit" exact component={FormSubmit} />
         </Switch>
-      </Router>
+      </Router> */}
     </div>
   );
 }
