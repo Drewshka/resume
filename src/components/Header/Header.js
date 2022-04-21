@@ -7,18 +7,7 @@ import github from "../../assets/icons/github.svg";
 import location from "../../assets/icons/location.svg";
 import phone from "../../assets/icons/phone.svg";
 import FormModal from "../FormModal/FormModal";
-// import { useState } from "react";
-// import FormSubmit from "../FormSubmit";
-import {
-  Text,
-  View,
-  //   StyleSheet,
-  //   Card,
-  //   Image,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
-// import Constants from "expo-constants";
+import { View, FlatList, TouchableOpacity } from "react-native";
 const FontAwesome = require("react-fontawesome");
 
 const Data = [
@@ -54,7 +43,6 @@ const Data = [
   },
 ];
 
-// function Header() {
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -77,14 +65,6 @@ class Header extends Component {
   }
 
   render() {
-    // const submitted = this.state.submitted;
-    // let button;
-    // if (submitted) {
-    //   button = <LogoutButton onClick={this.handleLogoutClick} />;
-    // } else {
-    //   button = <LoginButton onClick={this.handleLoginClick} />;
-    // }
-
     return (
       <div>
         <header className="header">
@@ -96,14 +76,13 @@ class Header extends Component {
             />
             <h1 className="header_section-name">Andrew Stevenson</h1>
             <h3 className="header_section-title">Full Stack Developer</h3>
+            <FormModal submitted={this.state.submitted} />
           </div>
-          <FormModal submitted={this.state.submitted} />
-          {/* <FormSubmit /> */}
+
           <div className="header_section">
             <ul className="header_section-links">
               <View>
                 <FlatList
-                  //   horizontal={true}
                   data={this.state.renderData}
                   keyExtractor={(item) => item.id.toString()}
                   showsHorizontalScrollIndicator={false}
@@ -111,6 +90,7 @@ class Header extends Component {
                     <TouchableOpacity
                       onPress={() => this.onPressHandler(item.id)}>
                       <li
+                        className="header_section-links-item"
                         style={
                           item.selected === true
                             ? {
@@ -124,18 +104,15 @@ class Header extends Component {
                                 backgroundColor: "cadetblue",
                               }
                         }>
-                        <Text>
-                          {" "}
-                          <FontAwesome
-                            id="icon"
-                            name="icon"
-                            className={item.className}
-                            size="lg"
-                            value={item.icon}
-                            style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
-                          />
-                          {item.item}
-                        </Text>
+                        <FontAwesome
+                          id="icon"
+                          name={item.icon}
+                          className={item.className}
+                          size="lg"
+                          value={item.icon}
+                          style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                        />
+                        {item.item}
                       </li>
                     </TouchableOpacity>
                   )}

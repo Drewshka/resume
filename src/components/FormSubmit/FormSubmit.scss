@@ -1,17 +1,30 @@
 @import "../../styles/partials/mixins";
 @import "../../styles/partials/variables";
 
-// .formSubmit {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     width: 80%;
-//     background-color: white;
-//     border: 2px solid #000;
-//     box-shadow: 24;
-//     padding: 4px;
-//     height: 90%;
-//     @include flex(center, center, column);
+#modal-modal-message {
+  margin-bottom: 1rem;
+  @include font("Open Sans Bold", 700, 20px, 22px, red);
+  @include tablet {
+    @include font("Open Sans Bold", 700, 24px, 24px, red);
+    margin-bottom: 1.5rem;
+  }
+  @include desktop {
+    @include font("Open Sans Bold", 700, 26px, 26px, red);
+  }
+}
 
-// }
+#modal-modal-name,
+#modal-modal-email,
+#modal-modal-company,
+#modal-modal-salary,
+#modal-modal-date {
+  margin-bottom: 0.5rem;
+  @include font("Open Sans Regular", 700, 20px, 24px, $primary);
+  @include tablet {
+    @include font("Open Sans Regular", 700, 24px, 26px, $primary);
+    margin-bottom: 1rem;
+  }
+  @include desktop {
+    @include font("Open Sans Regular", 700, 26px, 28px, $primary);
+  }
+}

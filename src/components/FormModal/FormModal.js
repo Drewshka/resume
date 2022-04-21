@@ -3,18 +3,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import React, { useState } from "react";
-// import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import { FormControl } from "@material-ui/core";
 import FormSubmit from "../FormSubmit/FormSubmit";
-
-// import moment from "moment";
-// import FormSubmit from "../FormSubmit/FormSubmit";
-
-// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const style = {
   position: "absolute",
@@ -22,15 +14,13 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 320,
-  //   width: "80%",
-
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
-export default function EditModal(props) {
+export default function FormModal(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -42,8 +32,6 @@ export default function EditModal(props) {
     salaryRange: "",
     startingDate: "",
   });
-
-  console.log(props);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,14 +45,7 @@ export default function EditModal(props) {
 
   const submit = (e) => {
     e.preventDefault();
-    // const history = useHistory();
-    alert("Info Submitted!");
     setSubmitted(true);
-    console.log(data);
-    // console.log(date);
-
-    // history.push("/submit");
-    // window.location.reload(false);
   };
 
   const { recruiterName, email, company, salaryRange, startingDate } = data;
@@ -75,10 +56,6 @@ export default function EditModal(props) {
   if (!submitted) {
     return (
       <>
-        {/* <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}> */}
         <Button onClick={handleOpen}>Contact Form</Button>
         <Modal
           open={open}
@@ -151,10 +128,8 @@ export default function EditModal(props) {
                       onChange={handleChange}
                       value={startingDate}
                       id="filled-basic"
-                      // variant="filled"
                       variant="outlined"
                       label="Starting Date"
-                      // emptyLabel="Starting Date"
                       name="startingDate"
                       type="date"
                       required
@@ -163,13 +138,11 @@ export default function EditModal(props) {
                   <Button type="submit" variant="contained" size="large">
                     Submit
                   </Button>
-                  {/* {submitted && <p>"Name: " {data.recruiterName}</p>} */}
                 </Box>
               </form>
             </Box>
           </Container>
         </Modal>
-        {/* </Grid> */}
       </>
     );
   }

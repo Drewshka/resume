@@ -3,7 +3,7 @@ import React from "react";
 import Divider from "@mui/material/Divider";
 var FontAwesome = require("react-fontawesome");
 
-function App() {
+function Body() {
   return (
     <>
       <section className="body">
@@ -13,7 +13,6 @@ function App() {
               id="icon"
               name="icon"
               className="fa-light fa-user-secret"
-              //   className="fa-solid fa-briefcase"
               size="lg"
               style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
             />
@@ -105,4 +104,4 @@ function App() {
   );
 }
 
-export default App;
+export default Body;

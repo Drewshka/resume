@@ -1,19 +1,16 @@
 @import "../../styles/partials/mixins";
 @import "../../styles/partials/variables";
 
-.active {
-  color: red;
-}
-
 .header {
   background-color: cadetblue;
   @include flex(space-around, center, column);
+  @include tablet {
+    @include flex(space-around, center, row);
+  }
+
   padding: 2rem;
   &_section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, column);
     &-headshot {
       height: 10rem;
       border-radius: 50px;
@@ -21,16 +18,35 @@
 
     &-name {
       @include font("Open Sans Regular", 700, 24px, 32px, $primary);
+      @include tablet {
+        @include font("Open Sans Regular", 700, 28px, 34px, $primary);
+      }
+      @include desktop {
+        @include font("Open Sans Regular", 700, 32px, 36px, $primary);
+      }
     }
 
     &-title {
+      margin-top: 0.25rem;
       @include font("Open Sans Light", 700, 20px, 32px, $primary);
+      @include tablet {
+        @include font("Open Sans Light", 700, 24px, 32px, $primary);
+      }
+      @include desktop {
+        @include font("Open Sans Light", 700, 26px, 32px, $primary);
+      }
     }
 
     &-links {
       list-style-type: none;
       &-item {
         @include font("Open Sans Light", 700, 12px, 18px, $primary);
+        @include tablet {
+          @include font("Open Sans Light", 700, 14px, 22px, $primary);
+        }
+        @include desktop {
+          @include font("Open Sans Light", 700, 16px, 24px, $primary);
+        }
       }
     }
   }

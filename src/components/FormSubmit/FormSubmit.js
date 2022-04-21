@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Container from "@mui/material/Container";
-import CssBaseline from "@mui/material/CssBaseline";
 import React from "react";
 import "./FormSubmit.scss";
 
@@ -13,9 +12,6 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 900,
-  // width: "90%",
-
-  // maxWidth: "90vw",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -29,16 +25,14 @@ const style = {
 
 export default function FormSubmit(props) {
   const [open, setOpen] = React.useState(true);
-  //   const handleOpen = () => setOpen(true);
+
   const handleClose = () => {
     window.location.reload(false);
     setOpen(false);
   };
 
-  console.log(props.data.email);
   return (
     <>
-      {/* <Button onClick={handleOpen}>Contact Form</Button> */}
       <Modal
         open={open}
         onClose={handleClose}
