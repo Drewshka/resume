@@ -2,13 +2,16 @@
 @import "../../styles/partials/variables";
 
 .header {
+  padding: 2rem;
+  @include desktop {
+    padding: 4rem;
+  }
   background-color: cadetblue;
   @include flex(space-around, center, column);
   @include tablet {
     @include flex(space-around, center, row);
   }
 
-  padding: 2rem;
   &_section {
     @include flex(center, center, column);
     &-headshot {

@@ -3,6 +3,12 @@
 
 .body {
   padding: 1rem 2rem;
+  @include tablet {
+    padding: 2rem 2rem;
+  }
+  @include desktop {
+    padding: 4rem;
+  }
   &_header {
     @include font("Open Sans Regular", 700, 24px, 32px, $primary);
     @include tablet {
