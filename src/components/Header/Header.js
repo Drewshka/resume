@@ -106,7 +106,7 @@ class Header extends Component {
                         }>
                         <FontAwesome
                           id="icon"
-                          name={item.icon}
+                          name="icon"
                           className={item.className}
                           size="lg"
                           value={item.icon}
